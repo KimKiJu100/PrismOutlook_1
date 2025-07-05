@@ -1,0 +1,63 @@
+12:50 솔루션(Prism Blank 앱 프로젝트)
+14:26 Unity 컨테이너
+16:40 메일 모듈(Prism 모듈) 프로젝트
+19:27 연락처 모듈 프로젝트
+20:04 캘린더 모듈 프로젝트
+20:47 질문: 모델 폴더는 어디에 있나요?
+21:55 코어(WPF 사용자 컨트롤) 프로젝트
+24:01 모듈 통합(모듈 카탈로그)
+27:44 셸 프로그램 디자인
+28:48 리본 컨트롤(Infragistics.WPF.Ribbon)
+35:50 Outlook 표시줄(Infragistics.WPF.OutlookBar)
+39:16 기본 콘텐츠 영역
+39:44 영역 이름 상수
+42:42 질문: Prism은 XAML UI 요소 템플릿을 제공하나요?
+44:45 리전에 뷰 삽입하기
+46:58 리전
+48:23 셸 리전에 대한 전반적인 계획
+48:58 Outlook 표시줄 및 리본 영역 만들기
+49:42 상태 표시줄
+50:30 질문: 사용 중인 모든 기능이 Xamarin에서 작동하나요?
+51:33 Outlook 막대를 영역으로 만들기
+52:08 컨트롤 테마 변경
+55:04 Prism.Regions.UpdateRegionsException - X 유형의 IRegionAdapter가 영역 어댑터 매핑에 등록되지 않았습니다.
+56:39 영역 어댑터에 관하여
+58:49 Core/Regions 폴더 추가
+59:25 XamOutlookBarRegionAdapter 클래스 생성
+1:03:16 CreateRegion() 메서드 및 영역 유형
+1:05:28 Adapt() 메서드 및 영역 대상 컨트롤에서 뷰 추가/제거
+1:09:16 ConfigureRegionAdapterMappings() 메서드 재정의
+1:13:57 리본을 영역으로 만들기
+1:14:42 리본 컨트롤에 대한 영역 어댑터 생성
+1:20:30 XamRibbonRegionAdapter를 영역 어댑터 매핑으로 등록
+1:21:09 영역 생성 완료 - 준비 완료 조회수
+1:21:44 솔루션에 지역 어댑터 배치에 대한 참고 사항
+1:22:40 메일 모듈에서 RegisterViewWithRegion() 호출 제거에 대한 참고 사항
+1:23:13 리본에 탭 추가
+1:24:19 메뉴 폴더 생성
+1:24:46 기업들이 자사 앱이 Microsoft Office처럼 보이도록 하는 이유
+1:25:39 질문: 탭을 새 모듈에 배치해야 할까요?
+1:27:27 모듈 설정 방법(Prism 템플릿 팩 제외)(IModule)
+1:28:32 종속성 주입에 대해
+1:31:15 IModule의 DI
+1:32:55 리본에 탭 추가 2부 - HomeTab 사용자 컨트롤 생성
+1:33:22 질문: Unity나 AutoFac과 같은 DI 프레임워크가 서비스 로케이터처럼 작동한다고 생각하시나요?
+1:36:00 탭 채우기(XAML에서 데이터 바인딩 또는 하드코딩)
+1:37:21 Infragistics.WPF.Ribbon 패키지를 모듈에 설치하기
+1:39:28 UserControl을 RibbonTabItem으로 변환하기
+1:42:00 컨트롤을 영역 관리자에 등록하기
+1:42:34 RegisterViewWithRegion(), 탐색, 뷰 검색, 정적 뷰와 탐색을 통해 변경되는 뷰 비교
+1:44:21 새 탭 테스트하기
+1:46:34 Prism 아키텍처
+1:47:20 Outlook 막대 그룹 만들기
+1:48:04 Infragistics.WPF.OutlookBar 패키지를 모듈에 설치하기
+1:48:30 Prism 탐색
+1:48:50 MailGroup UserControl을 만들고 OutlookBarGroup으로 변환하기
+1:51:16 Outlook 막대 테스트 그룹
+1:52:18 연락처 모듈에 메뉴 폴더 추가
+1:52:35 ContactsGroup UserControl 추가 및 OutlookBarGroup으로 변환
+1:53:39 연락처 모듈에 지역 관리자 추가
+1:54:05 지역에 뷰 등록
+1:54:50 모듈 카탈로그에 연락처 모듈 추가
+1:55:23 연락처 모듈 테스트
+1:56:00 다음 단계: 다른 그룹 선택 시 리본 메뉴 및 기본 콘텐츠 뷰 변경

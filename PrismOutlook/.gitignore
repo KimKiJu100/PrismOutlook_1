@@ -1,0 +1,28 @@
+## 기본 Visual Studio 설정
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## 빌드 결과물
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+*.log
+*.tlog
+*.tmp
+*.cache
+
+## 기타 무시할 파일들
+*.dbmdl
+*.bak
+*.orig
+*.vspscc
+*.vssscc
+*.pdb
+*.class
+*.psess
+*.vsp
+*.scc
