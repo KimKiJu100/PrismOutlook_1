@@ -1,4 +1,5 @@
-﻿using Infragistics.Windows.Ribbon;
+﻿using Infragistics.Themes;
+using Infragistics.Windows.Ribbon;
 using System.Windows;
 
 namespace PrismOutlook.Views
@@ -10,6 +11,7 @@ namespace PrismOutlook.Views
     {
         public MainWindow()
         {
+            Infragistics.Themes.ThemeManager.ApplicationTheme = new Office2010BlueTheme();
             InitializeComponent();
         }
     }

@@ -1,5 +1,9 @@
-﻿using Prism.Ioc;
+﻿using Infragistics.Windows.OutlookBar;
+using Infragistics.Windows.Ribbon;
+using Prism.Ioc;
 using Prism.Modularity;
+using Prism.Regions;
+using PrismOutlook.Core.Region;
 using PrismOutlook.Modeuls.Mail;
 using PrismOutlook.Views;
 using System.Windows;
@@ -30,5 +34,11 @@ namespace PrismOutlook
         //{
         //    return base.CreateModuleCatalog();
         //}
+
+        protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
+        {
+            base.ConfigureRegionAdapterMappings(regionAdapterMappings);
+            regionAdapterMappings.RegisterMapping(typeof(XamOutlookBar), Container.Resolve<XamOutlookBarRegionAdapter>());
+        }
     }
 }
