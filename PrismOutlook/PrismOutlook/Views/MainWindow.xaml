@@ -8,7 +8,7 @@
         Title="{Binding Title}" Height="350" Width="525" >
     <ig:RibbonWindowContentHost>
         <ig:RibbonWindowContentHost.Ribbon>
-            <ig:XamRibbon>
+            <ig:XamRibbon prism:RegionManager.RegionName="{x:Static Core:RegionNames.RibbonRegion}">
 
             </ig:XamRibbon>
         </ig:RibbonWindowContentHost.Ribbon>

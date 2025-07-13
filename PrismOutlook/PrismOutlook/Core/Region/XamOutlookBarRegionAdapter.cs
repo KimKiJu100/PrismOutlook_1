@@ -11,25 +11,25 @@ namespace PrismOutlook.Core.Region
 {
     public class XamOutlookBarRegionAdapter : RegionAdapterBase<XamOutlookBar>
     {
-        public XamOutlookBarRegionAdapter(IRegionBehaviorFactory factory) :
-             base(factory) 
+        public XamOutlookBarRegionAdapter(IRegionBehaviorFactory regionBehaviorfactory) :
+             base(regionBehaviorfactory) 
         {
             
         }
         protected override void Adapt(IRegion region, XamOutlookBar regionTarget)
         {
-            region.Views.CollectionChanged += ((x, y) =>
+            region.Views.CollectionChanged += ((s, e) =>
             {
-                switch (y.Action)
+                switch (e.Action)
                 {
                     case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
                         {
-                            foreach (OutlookBarGroup group in y.NewItems)
+                            foreach (OutlookBarGroup group in e.NewItems)
                             {
                                 regionTarget.Groups.Add(group);
 
                                 //The WPF XamOutlookBar does not automatically select the first group in it's collection.
-                                //So we must manually select the group if it is the first one in the collection, but we don't
+                                //So we must manually select the group if it is the first one in the collection, but we don't 
                                 //want to excute this code every time a new group is added, only if the first group is the current group being added.
                                 if (regionTarget.Groups[0] == group)
                                 {
@@ -40,7 +40,7 @@ namespace PrismOutlook.Core.Region
                         }
                     case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
                         {
-                            foreach (OutlookBarGroup group in y.OldItems)
+                            foreach (OutlookBarGroup group in e.OldItems)
                             {
                                 regionTarget.Groups.Remove(group);
                             }

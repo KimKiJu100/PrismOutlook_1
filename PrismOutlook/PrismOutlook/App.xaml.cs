@@ -5,6 +5,7 @@ using Prism.Modularity;
 using Prism.Regions;
 using PrismOutlook.Core.Region;
 using PrismOutlook.Modeuls.Mail;
+using PrismOutlook.Modeuls.Contacts;
 using PrismOutlook.Views;
 using System.Windows;
 
@@ -28,6 +29,7 @@ namespace PrismOutlook
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<MailModule>();
+            moduleCatalog.AddModule<ContactsModule>();
         }
 
         //protected override IModuleCatalog CreateModuleCatalog()
@@ -39,6 +41,7 @@ namespace PrismOutlook
         {
             base.ConfigureRegionAdapterMappings(regionAdapterMappings);
             regionAdapterMappings.RegisterMapping(typeof(XamOutlookBar), Container.Resolve<XamOutlookBarRegionAdapter>());
+            regionAdapterMappings.RegisterMapping(typeof(XamRibbon), Container.Resolve<XamRibbonRegionAdapter>());
         }
     }
 }

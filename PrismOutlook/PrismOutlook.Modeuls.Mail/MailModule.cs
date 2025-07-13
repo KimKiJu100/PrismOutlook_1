@@ -2,6 +2,7 @@
 using Prism.Modularity;
 using Prism.Regions;
 using PrismOutlook.Core;
+using PrismOutlook.Modeuls.Mail.Menus;
 using PrismOutlook.Modeuls.Mail.Views;
 
 namespace PrismOutlook.Modeuls.Mail
@@ -17,6 +18,9 @@ namespace PrismOutlook.Modeuls.Mail
         public void OnInitialized(IContainerProvider containerProvider)
         {
             this._regionManager.RegisterViewWithRegion(RegionNames.ContentRegion,typeof(ViewA));
+
+            this._regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(HomeTab));
+            this._regionManager.RegisterViewWithRegion(RegionNames.OutlookGroupRegion, typeof(MailGroup));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
