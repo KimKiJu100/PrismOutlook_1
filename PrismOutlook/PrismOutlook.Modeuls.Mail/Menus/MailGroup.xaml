@@ -3,8 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PrismOutlook.Modeuls.Mail.Menus"
              xmlns:ig="http://schemas.infragistics.com/xaml/wpf"
+             xmlns:prism ="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:igData ="http://schemas.infragistics.com/xaml"
              Header="Mail">
     <Grid>
-        <TextBlock Text="Testing"/>
+        <igData:XamDataTree ItemsSource="{Binding Items}">
+            <igData:XamDataTree.GlobalNodeLayouts>
+                <igData:NodeLayout Key="GlobalLayout" TargetTypeName="NavigationItem" DisplayMemberPath="Caption"/>
+            </igData:XamDataTree.GlobalNodeLayouts>
+        </igData:XamDataTree>
     </Grid>
 </ig:OutlookBarGroup>
