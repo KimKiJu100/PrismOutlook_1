@@ -1,5 +1,6 @@
 ﻿using Infragistics.Windows.OutlookBar;
 using Prism.Regions;
+using System.Collections.Specialized;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace PrismOutlook.Core.Region
             {
                 switch (e.Action)
                 {
-                    case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
+                    case NotifyCollectionChangedAction.Add:
                         {
                             foreach (OutlookBarGroup group in e.NewItems)
                             {
@@ -38,7 +39,7 @@ namespace PrismOutlook.Core.Region
                             }
                             break;
                         }
-                    case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
+                    case NotifyCollectionChangedAction.Remove:
                         {
                             foreach (OutlookBarGroup group in e.OldItems)
                             {
