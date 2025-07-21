@@ -4,11 +4,20 @@
              xmlns:local="clr-namespace:PrismOutlook.Modeuls.Mail.Menus"
              xmlns:ig="http://schemas.infragistics.com/xaml/wpf"
              xmlns:prism ="http://prismlibrary.com/"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:igData ="http://schemas.infragistics.com/xaml"
              Header="Mail">
     <Grid>
+
+        <!--xmlns:i ="http://schemas.microsoft.com/expression/2010/interactivity"-->
+        
         <igData:XamDataTree ItemsSource="{Binding Items}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="ActiveNodeChanged">
+                    <prism:InvokeCommandAction Command="{Binding SelectedCommand}" TriggerParameterPath="NewActiveTreeNode.Data"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <igData:XamDataTree.GlobalNodeLayouts>
                 <igData:NodeLayout Key="GlobalLayout" TargetTypeName="NavigationItem" DisplayMemberPath="Caption"/>
             </igData:XamDataTree.GlobalNodeLayouts>

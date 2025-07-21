@@ -7,6 +7,7 @@
     <PackageReference Include="Infragistics.WPF.DataTree.Trial" Version="25.1.22" />
     <PackageReference Include="Infragistics.WPF.OutlookBar.Trial" Version="25.1.22" />
     <PackageReference Include="Infragistics.WPF.Ribbon.Trial" Version="25.1.22" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
 </Project>

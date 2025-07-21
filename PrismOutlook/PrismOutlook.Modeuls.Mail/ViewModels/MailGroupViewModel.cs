@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 using PrismOutlook.Business;
 using System.Collections.ObjectModel;
 
@@ -11,6 +12,14 @@ namespace PrismOutlook.Modeuls.Mail.ViewModels
         {
             get { return _items; }
             set { SetProperty(ref _items, value); } 
+        }
+        private DelegateCommand<object> _selectedCommand;
+        public DelegateCommand<object> SelectedCommand =>
+            _selectedCommand ?? (_selectedCommand = new DelegateCommand<object>(ExecuteCommandName));
+
+        void ExecuteCommandName(object parameter)
+        {
+
         }
         public MailGroupViewModel()
         {

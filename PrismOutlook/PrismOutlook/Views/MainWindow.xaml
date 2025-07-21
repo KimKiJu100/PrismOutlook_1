@@ -13,7 +13,9 @@
             </ig:XamRibbon>
         </ig:RibbonWindowContentHost.Ribbon>
         <DockPanel LastChildFill="True">
-            <ig:XamOutlookBar prism:RegionManager.RegionName="{x:Static Core:RegionNames.OutlookGroupRegion}" DockPanel.Dock="Left" Width="200"></ig:XamOutlookBar>
+            <ig:XamOutlookBar prism:RegionManager.RegionName="{x:Static Core:RegionNames.OutlookGroupRegion}" 
+                              SelectedGroupChanged="XamOutlookBar_SelectedGroupChanged"
+                              DockPanel.Dock="Left" Width="200"></ig:XamOutlookBar>
             <ContentControl prism:RegionManager.RegionName="{x:Static Core:RegionNames.ContentRegion}"/> <!-- 동적 뷰 주입될 영역임.-->
         </DockPanel>
     </ig:RibbonWindowContentHost>

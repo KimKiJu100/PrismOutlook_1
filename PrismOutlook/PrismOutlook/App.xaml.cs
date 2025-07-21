@@ -8,6 +8,7 @@ using PrismOutlook.Modeuls.Mail;
 using PrismOutlook.Modeuls.Contacts;
 using PrismOutlook.Views;
 using System.Windows;
+using PrismOutlook.Core;
 
 namespace PrismOutlook
 {
@@ -23,7 +24,7 @@ namespace PrismOutlook
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
