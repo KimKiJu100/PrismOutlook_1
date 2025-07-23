@@ -12,7 +12,7 @@
 
         <!--xmlns:i ="http://schemas.microsoft.com/expression/2010/interactivity"-->
         
-        <igData:XamDataTree ItemsSource="{Binding Items}">
+        <igData:XamDataTree x:Name="_dataTree" ItemsSource="{Binding Items}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="ActiveNodeChanged">
                     <prism:InvokeCommandAction Command="{Binding SelectedCommand}" TriggerParameterPath="NewActiveTreeNode.Data"/>

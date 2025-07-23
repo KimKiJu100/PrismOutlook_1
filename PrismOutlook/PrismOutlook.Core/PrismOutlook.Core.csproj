@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Infragistics.WPF.Ribbon.Trial" Version="25.1.22" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
   </ItemGroup>
 
