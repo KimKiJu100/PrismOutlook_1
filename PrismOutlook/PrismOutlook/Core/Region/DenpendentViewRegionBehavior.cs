@@ -47,7 +47,7 @@ namespace PrismOutlook.Core.Region
                     dependentViews.ForEach(item => Region.RegionManager.Regions[item.Region].Add(item.View));
                 }
             }
-            else
+            else if(e.Action == NotifyCollectionChangedAction.Remove)
             {
                 
             }
