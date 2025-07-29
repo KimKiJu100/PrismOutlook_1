@@ -1,5 +1,4 @@
-﻿using PrismOutlook.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,13 +16,11 @@ using System.Windows.Shapes;
 namespace PrismOutlook.Modeuls.Contacts.Views
 {
     /// <summary>
-    /// Interaction logic for ViewA.xaml
+    /// HomeTab.xaml에 대한 상호 작용 논리
     /// </summary>
-    
-    [DependentViewAttribute(RegionNames.RibbonRegion,typeof(HomeTab))]
-    public partial class ViewA : UserControl
+    public partial class HomeTab
     {
-        public ViewA()
+        public HomeTab()
         {
             InitializeComponent();
         }
