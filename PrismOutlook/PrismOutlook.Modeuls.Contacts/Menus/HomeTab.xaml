@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:PrismOutlook.Modeuls.Contacts.Views"
              Header="Contacts">
     
-    <igWpf:RibbonGroup Id="Clipboard" Caption="New">
+    <igWpf:RibbonGroup Caption="New">
         <igWpf:ToolHorizontalWrapPanel>
             <igWpf:ButtonTool Caption="Button" igWpf:RibbonGroup.MaximumSize="ImageAndTextLarge"/>
         </igWpf:ToolHorizontalWrapPanel>
