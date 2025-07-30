@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PrismOutlook.Core.Region
 {
@@ -16,6 +17,9 @@ namespace PrismOutlook.Core.Region
     {
         public const string BehaviorKey = "DependentViewRegionBehavior";
         private readonly IContainerExtension _containerExtension;
+
+        //캐시 추가
+        private Dictionary<object, List<DependentViewInfo>> _dependentViewCache = new Dictionary<object, List<DependentViewInfo>>();
 
         public DenpendentViewRegionBehavior(IContainerExtension containerExtension)
         {
@@ -31,16 +35,25 @@ namespace PrismOutlook.Core.Region
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
 
-                foreach (var view in e.NewItems)
+                foreach (var newView in e.NewItems)
                 {
                     var dependentViews = new List<DependentViewInfo>();
-                    var atts = GetCoustomAttributes<DependentViewAttribute>(view.GetType());
-                    //get attribute
-                    foreach (var att in atts)
-                    {
-                        var info = CreateDependentViewInfo(att);
 
-                        dependentViews.Add(info);
+                    if (_dependentViewCache.ContainsKey(newView))
+                    {
+                        dependentViews = _dependentViewCache[newView];
+                    }
+                    else
+                    {
+                        var atts = GetCoustomAttributes<DependentViewAttribute>(newView.GetType());
+                        //get attribute
+                        foreach (var att in atts)
+                        {
+                            var info = CreateDependentViewInfo(att);
+
+                            dependentViews.Add(info);
+                        }
+                        _dependentViewCache.Add(newView, dependentViews);
                     }
 
                     //inject
@@ -49,8 +62,39 @@ namespace PrismOutlook.Core.Region
             }
             else if(e.Action == NotifyCollectionChangedAction.Remove)
             {
-                
+                foreach (var oldView in e.OldItems)
+                {
+                    if (_dependentViewCache.ContainsKey(oldView))
+                    {
+                        var dependentViews = _dependentViewCache[oldView];
+                        dependentViews.ForEach(item => Region.RegionManager.Regions[item.Region].Remove(item.View));
+
+                        if (!ShouldKeepAlive(oldView))
+                        {
+                            _dependentViewCache.Remove(oldView);
+                        }
+                    }
+                }
             }
+        }
+
+        private bool ShouldKeepAlive(object view)
+        {
+            var regionLifetime = GetViewOrDataContextLifeTime(view);
+
+            if (regionLifetime != null)
+                return regionLifetime.KeepAlive;
+
+            return true;
+        }
+
+        private IRegionMemberLifetime GetViewOrDataContextLifeTime(object view)
+        {
+            if (view is IRegionMemberLifetime regionLifetime)
+                return regionLifetime;
+            if (view is FrameworkElement fe)
+                return fe.DataContext as IRegionMemberLifetime;
+            return null;
         }
 
         private DependentViewInfo CreateDependentViewInfo(DependentViewAttribute attribute)
