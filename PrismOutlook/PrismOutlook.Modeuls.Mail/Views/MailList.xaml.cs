@@ -10,7 +10,7 @@ namespace PrismOutlook.Modeuls.Mail.Views
     /// 
 
     [DependentViewAttribute(RegionNames.RibbonRegion,typeof(HomeTab))]
-    public partial class MailList : UserControl
+    public partial class MailList : UserControl, ISupportDataContext
     {
         public MailList()
         {

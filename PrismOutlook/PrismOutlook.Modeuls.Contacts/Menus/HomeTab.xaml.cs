@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrismOutlook.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace PrismOutlook.Modeuls.Contacts.Views
     /// <summary>
     /// HomeTab.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class HomeTab
+    public partial class HomeTab:ISupportDataContext
     {
         public HomeTab()
         {

@@ -1,14 +1,15 @@
-﻿using Infragistics.Windows.OutlookBar;
+﻿using Infragistics.Themes;
+using Infragistics.Windows.OutlookBar;
 using Infragistics.Windows.Ribbon;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+using PrismOutlook.Core;
 using PrismOutlook.Core.Region;
-using PrismOutlook.Modeuls.Mail;
 using PrismOutlook.Modeuls.Contacts;
+using PrismOutlook.Modeuls.Mail;
 using PrismOutlook.Views;
 using System.Windows;
-using PrismOutlook.Core;
 
 namespace PrismOutlook
 {
@@ -26,6 +27,11 @@ namespace PrismOutlook
             return Container.Resolve<MainWindow>();
         }
 
+        protected override void InitializeShell(Window shell)
+        {
+            Infragistics.Themes.ThemeManager.ApplicationTheme = new Office2010BlueTheme();
+            base.InitializeShell(shell);
+        }
         /// <summary>
         /// DI 컨테이너에 싱글톤 서비스를 등록합니다.
         /// </summary>

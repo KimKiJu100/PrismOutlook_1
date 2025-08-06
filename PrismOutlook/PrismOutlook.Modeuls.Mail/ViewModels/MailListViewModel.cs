@@ -1,7 +1,9 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 using Prism.Regions;
 using PrismOutlook.Core;
 using System;
+using System.Windows;
 
 namespace PrismOutlook.Modeuls.Mail.ViewModels
 {

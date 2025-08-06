@@ -13,7 +13,6 @@ namespace PrismOutlook.Core
     {
         public virtual void ConfirmNavigationRequest(NavigationContext navigationContext, Action<bool> continuationCallback)
         {
-
             continuationCallback(true);
         }
 

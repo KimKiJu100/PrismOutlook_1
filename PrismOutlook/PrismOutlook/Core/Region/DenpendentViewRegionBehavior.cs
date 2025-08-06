@@ -51,6 +51,12 @@ namespace PrismOutlook.Core.Region
                         {
                             var info = CreateDependentViewInfo(att);
 
+                            //사용자 컨트롤 동적 데이터 컨텍스트 연결
+                            if (info.View is ISupportDataContext inforDC && newView is ISupportDataContext viewDC)
+                            {
+                                inforDC.DataContext = viewDC.DataContext;
+                            }
+
                             dependentViews.Add(info);
                         }
                         _dependentViewCache.Add(newView, dependentViews);

@@ -21,7 +21,7 @@ namespace PrismOutlook.Modeuls.Contacts.Views
     /// </summary>
     
     [DependentViewAttribute(RegionNames.RibbonRegion,typeof(HomeTab))]
-    public partial class ViewA : UserControl
+    public partial class ViewA : UserControl, ISupportDataContext
     {
         public ViewA()
         {

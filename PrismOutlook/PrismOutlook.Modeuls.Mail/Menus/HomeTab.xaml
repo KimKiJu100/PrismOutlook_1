@@ -6,7 +6,7 @@
              Header="Mail">
     <ig:RibbonGroup Caption="New">
         <ig:ToolHorizontalWrapPanel>
-            <ig:ButtonTool Caption="Button" ig:RibbonGroup.MaximumSize="ImageAndTextLarge"/>
+            <ig:ButtonTool Caption="Button" ig:RibbonGroup.MaximumSize="ImageAndTextLarge" Command="{Binding TestCommand}"/>
         </ig:ToolHorizontalWrapPanel>
     </ig:RibbonGroup>
     

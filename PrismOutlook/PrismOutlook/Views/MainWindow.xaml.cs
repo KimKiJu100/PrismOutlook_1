@@ -16,7 +16,6 @@ namespace PrismOutlook.Views
 
         public MainWindow(IApplicationCommands applicationCommands)
         {
-            Infragistics.Themes.ThemeManager.ApplicationTheme = new Office2010BlueTheme();
             InitializeComponent();
             this._applicationCommands = applicationCommands;
         }

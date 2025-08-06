@@ -7,7 +7,7 @@
     
     <igWpf:RibbonGroup Caption="New">
         <igWpf:ToolHorizontalWrapPanel>
-            <igWpf:ButtonTool Caption="Button" igWpf:RibbonGroup.MaximumSize="ImageAndTextLarge"/>
+            <igWpf:ButtonTool Caption="Button" igWpf:RibbonGroup.MaximumSize="ImageAndTextLarge" Command="{Binding TestCommand}"/>
         </igWpf:ToolHorizontalWrapPanel>
     </igWpf:RibbonGroup>
 </igWpf:RibbonTabItem>
