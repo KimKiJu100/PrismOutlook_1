@@ -3,6 +3,8 @@ using Prism.Mvvm;
 using Prism.Regions;
 using PrismOutlook.Core;
 using System;
+using System.Collections.ObjectModel;
+using System.Net.Mail;
 using System.Windows;
 
 namespace PrismOutlook.Modeuls.Mail.ViewModels
@@ -14,6 +16,13 @@ namespace PrismOutlook.Modeuls.Mail.ViewModels
         {
             get { return _title; }
             set { SetProperty(ref _title, value); } 
+        }
+
+        private ObservableCollection<MailMessage> _filedMessage;
+        public ObservableCollection<MailMessage> FiledMessage
+        {
+            get { return _filedMessage; }
+            set { SetProperty(ref _filedMessage, value); }
         }
 
         public MailListViewModel()

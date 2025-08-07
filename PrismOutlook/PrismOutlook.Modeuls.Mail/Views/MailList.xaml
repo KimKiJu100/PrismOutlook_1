@@ -6,12 +6,23 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <ig:XamDataGrid/>
-        <Grid Grid.Column ="1" MinWidth="250" Background="LightBlue"/>
         
+        <!-- MailList -->
+        <Grid Background="White" Margin="5,0,0,0">
+            <ig:XamDataGrid>
+
+            </ig:XamDataGrid>
+        </Grid>
+
+        <!--Mail Preview Area-->
+        <Border>
+            <!--아직 못봄 미구현-->
+        </Border>
+
+        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" Width="10" HorizontalAlignment="Left"/>
+
     </Grid>
 </UserControl>

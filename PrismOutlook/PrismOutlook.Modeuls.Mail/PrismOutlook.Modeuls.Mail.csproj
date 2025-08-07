@@ -14,5 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\PrismOutlook.Business\PrismOutlook.Business.csproj" />
     <ProjectReference Include="..\PrismOutlook.Core\PrismOutlook.Core.csproj" />
+    <ProjectReference Include="..\PrismOutlook.Service.Interfaces\PrismOutlook.Service.Interfaces.csproj" />
   </ItemGroup>
 </Project>

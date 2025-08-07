@@ -16,5 +16,7 @@
     <ProjectReference Include="..\PrismOutlook.Modeuls.Calendar\PrismOutlook.Modeuls.Calendar.csproj" />
     <ProjectReference Include="..\PrismOutlook.Modeuls.Contacts\PrismOutlook.Modeuls.Contacts.csproj" />
     <ProjectReference Include="..\PrismOutlook.Modeuls.Mail\PrismOutlook.Modeuls.Mail.csproj" />
+    <ProjectReference Include="..\PrismOutlook.Service.Interfaces\PrismOutlook.Service.Interfaces.csproj" />
+    <ProjectReference Include="..\PrismOutlook.Service\PrismOutlook.Service.csproj" />
   </ItemGroup>
 </Project>
