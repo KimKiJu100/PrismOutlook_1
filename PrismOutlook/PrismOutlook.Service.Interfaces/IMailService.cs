@@ -10,5 +10,7 @@ namespace PrismOutlook.Service.Interfaces
     public interface IMailService
     {
         IList<MailMessage> GetInboxItems();
+        IList<MailMessage> GetSentItems();
+        IList<MailMessage> GetDeleteItems();
     }
 }

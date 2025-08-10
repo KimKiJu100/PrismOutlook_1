@@ -15,5 +15,19 @@
     <ProjectReference Include="..\PrismOutlook.Business\PrismOutlook.Business.csproj" />
     <ProjectReference Include="..\PrismOutlook.Core\PrismOutlook.Core.csproj" />
     <ProjectReference Include="..\PrismOutlook.Service.Interfaces\PrismOutlook.Service.Interfaces.csproj" />
+    <ProjectReference Include="..\PrismOutlook.Service\PrismOutlook.Service.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

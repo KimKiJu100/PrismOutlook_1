@@ -12,14 +12,34 @@
         
         <!-- MailList -->
         <Grid Background="White" Margin="5,0,0,0">
-            <ig:XamDataGrid>
+            <ig:XamDataGrid DataSource="{Binding Messages}" ActiveDataItem="{Binding SelectedMessage}">
+                <ig:XamDataGrid.FieldSettings>
+                    <ig:FieldSettings AllowEdit="false"/>
+                </ig:XamDataGrid.FieldSettings>
 
+                <ig:XamDataGrid.FieldLayoutSettings>
+                    <ig:FieldLayoutSettings AutoGenerateFields="False"/>
+                </ig:XamDataGrid.FieldLayoutSettings>
+                
+                <ig:XamDataGrid.FieldLayouts>
+                    <ig:FieldLayout>
+                        <ig:TextField Name="From" />
+                        <ig:TextField Name="Subject" />
+                        <ig:DateTimeField Name="DataSent" />
+                    </ig:FieldLayout>
+                </ig:XamDataGrid.FieldLayouts>
             </ig:XamDataGrid>
         </Grid>
 
         <!--Mail Preview Area-->
-        <Border>
-            <!--아직 못봄 미구현-->
+        <Border Grid.Column="1" Margin="5,0,0,0" Background="White">
+            <StackPanel>
+                <TextBlock Margin="5" Text="{Binding SelectedMessage.From}"/>
+                <TextBlock Margin="5" Text="{Binding SelectedMessage.To}"/>
+                <TextBlock Margin="5" Text="{Binding SelectedMessage.CC}"/>
+                <TextBlock Margin="5" Text="{Binding SelectedMessage.Subject}"/>
+                <TextBlock Margin="5" Text="{Binding SelectedMessage.Body}"/>
+            </StackPanel>
         </Border>
 
         <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" Width="10" HorizontalAlignment="Left"/>

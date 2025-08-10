@@ -6,6 +6,8 @@ using PrismOutlook.Core;
 using PrismOutlook.Modeuls.Mail.Menus;
 using PrismOutlook.Modeuls.Mail.ViewModels;
 using PrismOutlook.Modeuls.Mail.Views;
+using PrismOutlook.Service;
+using PrismOutlook.Service.Interfaces;
 
 namespace PrismOutlook.Modeuls.Mail
 {
@@ -29,6 +31,9 @@ namespace PrismOutlook.Modeuls.Mail
             ViewModelLocationProvider.Register<MailGroup, MailGroupViewModel>();
 
             containerRegistry.RegisterForNavigation<MailList, MailListViewModel>();
+
+            //서비스 등록
+            containerRegistry.RegisterSingleton<IMailService,MailService>();
         }
     }
 }
