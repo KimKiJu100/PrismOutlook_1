@@ -4,6 +4,14 @@
              xmlns:prism="http://prismlibrary.com/"           
              xmlns:ig ="http://schemas.infragistics.com/xaml/wpf"
              prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ig:CellValuePresenter}">
+            <Style.Setters>
+                <Setter Property="BorderThickness" Value="0,0,0,0"/>
+            </Style.Setters>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
