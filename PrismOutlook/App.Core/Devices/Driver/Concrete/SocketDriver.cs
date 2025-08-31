@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.Core.Devices.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -6,17 +7,18 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Core.Device.Driver.Concrete
+namespace App.Core.Devices.Driver.Concrete
 {
-    public class SocketDriver : IDriver<byte[]>
+    public class SocketDriver : IDeviceChannel
     {
+        private readonly IDriverParameter _driverParameter;
         private Socket _clientSocket;
         private SocketAsyncEventArgs _receiveEventArgs;
         private byte[] _buffer = new byte[1024];
         public bool IsConnected => throw new NotImplementedException();
 
-        public event ValueTriggerEventHandler ValueTrigger;
-        public event TerminatedEventHandler Terminated;
+        //public event ValueTriggerEventHandler ValueTrigger;
+        //public event TerminatedEventHandler Terminated;
 
         public SocketDriver()
         {
@@ -76,6 +78,11 @@ namespace App.Core.Device.Driver.Concrete
                 Console.WriteLine("Disconnected from server.");
                 _clientSocket.Close();
             }
+        }
+
+        public bool Connecntion(IDriverParameter param)
+        {
+            _driverParameter = param;
         }
     }
 }

@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Device\Abstract\" />
+    <Compile Remove="Devices\Driver\Protocol\Model\**" />
+    <EmbeddedResource Remove="Devices\Driver\Protocol\Model\**" />
+    <None Remove="Devices\Driver\Protocol\Model\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,19 +1,20 @@
-﻿using System;
+﻿using App.Core.Devices.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Core.Device.Driver.Concrete
+namespace App.Core.Devices.Driver.Concrete
 {
-    public class SerialDriver : IDriver<byte[]>
+    public class SerialDriver : IDeviceChannel
     {
         private SerialPort _port;
         public bool IsConnected => IsConnected;
 
-        public event ValueTriggerEventHandler ValueTrigger;
-        public event TerminatedEventHandler Terminated;
+        //public event ValueTriggerEventHandler ValueTrigger;
+        //public event TerminatedEventHandler Terminated;
 
         public SerialDriver()
         {
@@ -63,8 +64,8 @@ namespace App.Core.Device.Driver.Concrete
 
                 if (read > 0)
                 {
-                    if (ValueTrigger != null)
-                        ValueTrigger(this, buffer);
+                    //if (ValueTrigger != null)
+                    //    ValueTrigger(this, buffer);
                 }
             }
         }
@@ -76,7 +77,7 @@ namespace App.Core.Device.Driver.Concrete
                  e.EventType == SerialError.RXOver)
             {
                 DisConnecntion();
-                Terminated(null);
+                //Terminated(null);
             }
         }
         protected void OnPinChanged(object sender, SerialPinChangedEventArgs e)
@@ -84,8 +85,13 @@ namespace App.Core.Device.Driver.Concrete
             if (e.EventType == SerialPinChange.CDChanged)
             {
                 DisConnecntion();
-                Terminated(null);
+                //Terminated(null);
             }
+        }
+
+        public bool Connecntion(IDriverParameter param)
+        {
+            throw new NotImplementedException();
         }
     }
 }

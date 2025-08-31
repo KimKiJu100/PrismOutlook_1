@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Core.Device.Driver
+namespace App.Core.Devices.Driver.Protocol.ProtocolModel.Interfaces
 {
-    public interface IDriverTransceiver<T>
+    public interface IProtocolResponse
     {
-        void Send(T data);
-        T Receive();
     }
 }
